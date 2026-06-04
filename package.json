@@ -1,0 +1,21 @@
+{
+  "name": "safe-simulated-game-development-environment",
+  "version": "1.0.0",
+  "description": "Safe simulated game development environment with blue wireframe maps, red safety bounds, green transform checkpoints, MVP/clip-space validation, and CI/CD packaging.",
+  "type": "module",
+  "scripts": {
+    "start": "vite --host 0.0.0.0",
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node tests/safety.test.js",
+    "package:zip": "node scripts/package-zip.js"
+  },
+  "dependencies": {
+    "@vitejs/plugin-basic-ssl": "latest",
+    "vite": "latest",
+    "three": "latest",
+    "jszip": "latest"
+  },
+  "devDependencies": {}
+}
