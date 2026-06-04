@@ -1,0 +1,39 @@
+name: Safe Simulation CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-test-package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run safety tests
+        run: npm test
+
+      - name: Build browser simulation
+        run: npm run build
+
+      - name: Package repository ZIP
+        run: npm run package:zip
+
+      - name: Upload simulation package
+        uses: actions/upload-artifact@v4
+        with:
+          name: safe-simulated-game-development-environment
+          path: dist/safe-simulated-game-development-environment.zip
