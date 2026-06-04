@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Safe Simulated Game Development Environment</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hud-panel">
+        <p class="eyebrow">High Confidence / Low Risk</p>
+        <h1>Safe Simulated Game Development Environment</h1>
+        <p>
+          Blue wireframe maps, red safety bounds, green transformation checkpoints,
+          and MVP/clip-space validation for sandboxed game development.
+        </p>
+        <div class="button-row">
+          <button id="toggle-redraw">Safe Redraw Mode: ON</button>
+          <button id="toggle-debug">Debug Overlay: ON</button>
+        </div>
+        <div class="pipeline">
+          <span>Build</span>
+          <span>Test</span>
+          <span>Validate</span>
+          <span>Package</span>
+          <span>Deploy</span>
+        </div>
+      </section>
+      <section id="scene-root" class="scene-root" aria-label="Three.js safe simulation canvas"></section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
